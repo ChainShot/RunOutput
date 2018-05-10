@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import RunResults from './RunResults';
 import RunErrors from './RunErrors';
-import './RunOutput.css'
 
 class RunOutput extends Component {
     render() {

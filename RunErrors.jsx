@@ -80,7 +80,7 @@ class RunErrors extends Component {
 
     render() {
         return (
-            <div class="run-errors">
+            <div className="run-errors">
                 {this.errorResponse()}
             </div>
         )

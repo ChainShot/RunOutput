@@ -1,17 +1,46 @@
 import React, {Component} from 'react';
+import MinusSquare from './MinusSquare';
+import PlusSquare from './PlusSquare';
 
 class LogType extends Component {
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            expanded: false
+        }
+    }
+    renderToggle() {
+        if(this.state.expanded) {
+            return (
+                <span onClick={() => this.setState({ expanded: false })}>
+                    <MinusSquare />
+                </span>
+            )
+        }
+        return (
+            <span onClick={() => this.setState({ expanded: true })}>
+                <PlusSquare/>
+            </span>
+        )
+    }
+    renderLog() {
         const {item} = this.props;
-        const {v,l} = item;
+        if(this.state.expanded) {
+            return (
+                <pre>{ item.v }</pre>
+            )
+        }
+        return null;
+    }
+    render() {
+        const {l} = this.props.item;
         const label = (l && l.length > 0) ? l.slice(1) : 'Log'
         return (
-            <React.Fragment>
+            <div className="result-type result-type--log">
+                { this.renderToggle() }
                 <label> { label } </label>
-                <pre className="result-type result-type--log">
-                    { v }
-                </pre>
-            </React.Fragment>
+                { this.renderLog() }
+            </div>
         )
     }
 }

@@ -25,7 +25,7 @@ class RunResults extends Component {
                     <div className="run-results__result-items">
                         {
                             response.result.output.map(item => {
-                                return <RunResultItem key={item} item={item}></RunResultItem>
+                                return <RunResultItem key={item.v || item.l} item={item}></RunResultItem>
                             })
                         }
                     </div>

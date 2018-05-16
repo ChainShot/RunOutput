@@ -10,7 +10,7 @@ class RunResultItem extends Component {
                 <div className="run-result-item__test-results">
                 {
                     (item.items || []).map(child => {
-                        return <RunResultItem key={child} item={child}></RunResultItem>
+                        return <RunResultItem key={child.v || child.l} item={child}></RunResultItem>
                     })
                 }
                 </div>

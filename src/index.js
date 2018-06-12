@@ -1,4 +1,4 @@
-import { RunOutput } from './RunOutput'
+import RunOutput from './RunOutput'
 
 export {
   RunOutput

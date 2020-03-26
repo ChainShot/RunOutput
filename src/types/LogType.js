@@ -37,8 +37,10 @@ class LogType extends Component {
         const label = (l && l.length > 0) ? l.slice(1) : 'Log'
         return (
             <div className="result-type result-type--log">
-                { this.renderToggle() }
-                <label> { label } </label>
+                <div className="result-type--log-top">
+                  { this.renderToggle() }
+                  <label> { label } </label>
+                </div>
                 { this.renderLog() }
             </div>
         )
